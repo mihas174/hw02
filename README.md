@@ -1,12 +1,18 @@
 1) Клонирование Vagrantfile из репозитория https://github.com/erlong15/otus-linux
 2) Добавление дисков - lобавляю в Vagrantfile следующие строки
->    ,
->    :sata5 => {
->
->   :dfile => './sata5.vdi',
->   :size => 250, # Megabytes
->   :port => 5 
+
+>,
+
+>:sata5 => {
+
+>        :dfile => './sata5.vdi',
+
+>        :size => 250, # Megabytes
+
+>        :port => 5 
+
 >}
+
 3) Создние Raid6: 
 
 >sudo mdadm --create --verbose /dev/md0 -l 6 -n 5 /dev/sd{b,c,d,e,f}
